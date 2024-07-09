@@ -35,7 +35,6 @@ const game = (function (board, gameStatus, newGameBtn) {
     function newGame() {
         squares.fill('');
         currentPlayer = Player1;
-        console.log(board);
         board.addEventListener('click', clickSquare)
         renderPage();
     }
@@ -56,11 +55,9 @@ const game = (function (board, gameStatus, newGameBtn) {
 
     function clickSquare(event) {
         const square = event.target;
-        console.log(square.dataset.index)
         if(square.classList.contains('square')) {
             const index = square.dataset.index;
             if(squares[index] === '') {
-                console.log(currentPlayer)
                 makeMove(currentPlayer, index)
             }
         }
